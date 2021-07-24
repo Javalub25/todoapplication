@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO Application</title>
+    <link rel="stylesheet" th:href="@{/css/todo.css}" type="text/css">
+</head>
+<body>
+  <h1>TODO Application</h1>
+  <h2>Zadania do wykonania</h2>
+  <table class="minimalistBlack">
+      <thead>
+        <tr>
+            <td>Zadanie</td>
+            <td>Data utworzenia</td>
+        </tr>
+      </thead>
+    <tr th:each="todo: ${tasks}">
+      <td th:text="${todo.task}"></td>
+      <td th:text="${todo.createDate}"></td>
+    </tr>
+  </table>
+</body>
+</html>

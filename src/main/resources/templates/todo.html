@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+</head>
+<body>
+  <h2>Zadanie</h2>
+  <form role="form" th:object="${todo}" th:action="@{/todo}" method="post">
+      <div>
+          <input type="hidden" name="id" th:value="${todo.id}">
+      </div>
+      <div>
+          <input type="text" name="task" th:value="${todo.task}" placeholder="Wprowadź zadanie">
+      </div>
+      <div>
+          <input type="submit" value="Zapisz">
+      </div>
+  </form>
+</body>
+</html>
